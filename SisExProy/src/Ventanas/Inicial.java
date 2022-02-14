@@ -28,6 +28,9 @@ public class Inicial extends javax.swing.JFrame {
         ImageIcon imagen2= new ImageIcon(getClass().getResource("/imagenes/uaeh_logo_color.png"));
         Icon fondo2=new ImageIcon(imagen2.getImage().getScaledInstance(lblimagen2.getWidth(), lblimagen2.getHeight(), Image.SCALE_DEFAULT));
         lblimagen2.setIcon(fondo2);
+        ImageIcon imagen3= new ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"));
+        Icon fondoa=new ImageIcon(imagen3.getImage().getScaledInstance(Fondo.getWidth(), Fondo.getHeight(), Image.SCALE_DEFAULT));
+        Fondo.setIcon(fondoa);
         this.setLocationRelativeTo(null);
     }
 
@@ -45,8 +48,12 @@ public class Inicial extends javax.swing.JFrame {
         BtnUser = new javax.swing.JButton();
         BtnDocente = new javax.swing.JButton();
         BtnInfo = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(lblimagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 17, 154, 129));
+        getContentPane().add(lblimagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 17, 251, 155));
 
         BtnUser.setText("Usuarios");
         BtnUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -55,6 +62,7 @@ public class Inicial extends javax.swing.JFrame {
                 BtnUserActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 223, -1, -1));
 
         BtnDocente.setText("Docente");
         BtnDocente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -63,6 +71,7 @@ public class Inicial extends javax.swing.JFrame {
                 BtnDocenteActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 223, -1, -1));
 
         BtnInfo.setText("Información");
         BtnInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -71,40 +80,8 @@ public class Inicial extends javax.swing.JFrame {
                 BtnInfoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(lblimagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addComponent(lblimagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(BtnUser)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BtnDocente)
-                .addGap(91, 91, 91)
-                .addComponent(BtnInfo)
-                .addGap(63, 63, 63))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblimagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblimagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnInfo)
-                    .addComponent(BtnDocente)
-                    .addComponent(BtnUser))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
+        getContentPane().add(BtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 223, -1, -1));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -4, 530, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +137,7 @@ public class Inicial extends javax.swing.JFrame {
     private javax.swing.JButton BtnDocente;
     private javax.swing.JButton BtnInfo;
     private javax.swing.JButton BtnUser;
+    private javax.swing.JLabel Fondo;
     private javax.swing.JLabel lblimagen1;
     private javax.swing.JLabel lblimagen2;
     // End of variables declaration//GEN-END:variables
