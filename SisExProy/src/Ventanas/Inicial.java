@@ -47,7 +47,7 @@ public class Inicial extends javax.swing.JFrame {
         lblimagen2 = new javax.swing.JLabel();
         BtnUser = new javax.swing.JButton();
         BtnDocente = new javax.swing.JButton();
-        BtnInfo = new javax.swing.JButton();
+        Btnlog = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,14 +73,14 @@ public class Inicial extends javax.swing.JFrame {
         });
         getContentPane().add(BtnDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 223, -1, -1));
 
-        BtnInfo.setText("Información");
-        BtnInfo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnInfo.addActionListener(new java.awt.event.ActionListener() {
+        Btnlog.setText("Login");
+        Btnlog.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Btnlog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnInfoActionPerformed(evt);
+                BtnlogActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 223, -1, -1));
+        getContentPane().add(Btnlog, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 223, -1, -1));
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -4, 530, 310));
 
         pack();
@@ -94,9 +94,11 @@ public class Inicial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnDocenteActionPerformed
 
-    private void BtnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInfoActionPerformed
+    private void BtnlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnlogActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnInfoActionPerformed
+        this.dispose();
+        new login().setVisible(true);
+    }//GEN-LAST:event_BtnlogActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,6 +126,7 @@ public class Inicial extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Inicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -135,8 +138,8 @@ public class Inicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnDocente;
-    private javax.swing.JButton BtnInfo;
     private javax.swing.JButton BtnUser;
+    private javax.swing.JButton Btnlog;
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel lblimagen1;
     private javax.swing.JLabel lblimagen2;
