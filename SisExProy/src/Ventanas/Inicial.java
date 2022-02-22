@@ -43,45 +43,62 @@ public class Inicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lblimagen1 = new javax.swing.JLabel();
         lblimagen2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         BtnUser = new javax.swing.JButton();
-        BtnDocente = new javax.swing.JButton();
         Btnlog = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(lblimagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 17, 154, 129));
-        getContentPane().add(lblimagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(274, 17, 251, 155));
 
-        BtnUser.setText("Usuarios");
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel2.setText("Yadhira Villeda Trejo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel3.setText("Ivan Felipe Campos Esparza ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setText("Jose Luis Alvarez Roldan");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, -1, -1));
+        getContentPane().add(lblimagen1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 17, 154, 129));
+        getContentPane().add(lblimagen2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 251, 155));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel1.setText("Docente");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel5.setText("Martha Idalid Gonzales Rivera");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
+
+        BtnUser.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BtnUser.setText("Metodo");
         BtnUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnUserActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 223, -1, -1));
+        getContentPane().add(BtnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
 
-        BtnDocente.setText("Docente");
-        BtnDocente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnDocente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnDocenteActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BtnDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 223, -1, -1));
-
-        Btnlog.setText("Login");
+        Btnlog.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Btnlog.setText("Sistema Experto");
         Btnlog.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Btnlog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnlogActionPerformed(evt);
             }
         });
-        getContentPane().add(Btnlog, new org.netbeans.lib.awtextra.AbsoluteConstraints(391, 223, -1, -1));
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -4, 530, 310));
+        getContentPane().add(Btnlog, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, -1, -1));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -4, 590, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -89,10 +106,6 @@ public class Inicial extends javax.swing.JFrame {
     private void BtnUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnUserActionPerformed
-
-    private void BtnDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDocenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnDocenteActionPerformed
 
     private void BtnlogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnlogActionPerformed
         // TODO add your handling code here:
@@ -137,10 +150,14 @@ public class Inicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnDocente;
     private javax.swing.JButton BtnUser;
     private javax.swing.JButton Btnlog;
     private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblimagen1;
     private javax.swing.JLabel lblimagen2;
     // End of variables declaration//GEN-END:variables
