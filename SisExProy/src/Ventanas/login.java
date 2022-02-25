@@ -187,11 +187,23 @@ public class login extends javax.swing.JFrame {
         if(rs.next()){
             
             
-            resultado = 1;
+            resultado = Integer.parseInt(rs.getString("fk_tipo_usuario"));
             
             if(resultado==1){
                 
                 Administrador principal = new Administrador();
+                principal.setVisible(true);
+                this.dispose();
+                
+                System.out.println("Si funciono...");
+                resultado=0;
+                con.close(); //Cerrando conexion
+                
+            }
+            
+            if(resultado==2){
+                
+                Usuario principal = new Usuario();
                 principal.setVisible(true);
                 this.dispose();
                 
