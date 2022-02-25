@@ -8,13 +8,21 @@ package Ventanas;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import static conexion.conexion.getConection;
+import static conexion.conexion.ps;
+import static conexion.conexion.rs;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class login extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    String user;
+    
     public login() {
         initComponents();
         ImageIcon imagen= new ImageIcon(getClass().getResource("/imagenes/Fondo.jpg"));
@@ -63,6 +71,11 @@ public class login extends javax.swing.JFrame {
 
         TxtPass.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         TxtPass.setText("jPasswordField1");
+        TxtPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TxtPassMouseClicked(evt);
+            }
+        });
 
         BtnOk.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         BtnOk.setText("Aceptar");
@@ -143,11 +156,62 @@ public class login extends javax.swing.JFrame {
 
     private void TxtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtUserActionPerformed
         // TODO add your handling code here:
-        user = TxtUser.getText();
     }//GEN-LAST:event_TxtUserActionPerformed
 
     private void BtnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnOkActionPerformed
         // TODO add your handling code here:
+        try
+        {
+            validar_usuario();
+
+        } catch (SQLException ex)
+        {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
+        
+    }                                           
+
+    public void validar_usuario() throws SQLException{
+        
+        Connection con = getConection(); //Abriendo la conexion
+        
+        int resultado = 0;
+        String user = String.valueOf(TxtUser.getText());
+        String pass =  String.valueOf(TxtPass.getPassword());
+        
+        ps = con.prepareStatement("select * from login where nombre_usuario='"+user+"' and contrasenia='"+pass+"';");
+        //ps = con.prepareStatement("select * from login where nombre_usuario='Ivan' and contrasenia='nobodyloveme';");
+        rs=ps.executeQuery();
+        
+        if(rs.next()){
+            
+            
+            resultado = 1;
+            
+            if(resultado==1){
+                
+                Administrador principal = new Administrador();
+                principal.setVisible(true);
+                this.dispose();
+                
+                System.out.println("Si funciono...");
+                resultado=0;
+                con.close(); //Cerrando conexion
+                
+            }
+
+            else{
+                JOptionPane.showMessageDialog(null,"Error de acceso a la base de datos");
+            }
+            
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Usuario o contraseña incorrectos");
+            TxtUser.setText("");
+            TxtPass.setText("");
+        }
     }//GEN-LAST:event_BtnOkActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -155,6 +219,11 @@ public class login extends javax.swing.JFrame {
         this.dispose();
         new Inicial().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TxtPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtPassMouseClicked
+        // TODO add your handling code here:
+        TxtPass.setText("");
+    }//GEN-LAST:event_TxtPassMouseClicked
 
     /**
      * @param args the command line arguments

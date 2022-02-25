@@ -2,13 +2,12 @@ package conexion;
 
 import java.awt.HeadlessException;
 import java.sql.*;
-import javax.swing.JOptionPane;
 
 public class conexion {
 
     public static String nombreBd="sistema_experto";
     public static String usuario = "root";
-    public static String password="Admin3312mysql";
+    public static String password="toradoraA3"; //Cambiar por la propia ***
     public static String url="jdbc:mysql://localhost:3306/"+nombreBd+"?useUnicode=trueuse"
     +"JDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&"+"serverTimezone=UTC";
     
@@ -26,7 +25,8 @@ public class conexion {
             Class.forName("com.mysql.cj.jdbc.Driver"); //Nombre de espacio del conector
             con = (Connection) DriverManager.getConnection(url, usuario, password);
             
-            JOptionPane.showMessageDialog(null,"Conexion exitosa");
+            //JOptionPane.showMessageDialog(null,"Conexion exitosa");
+            System.out.println("Conexión exitosa");
             
         }catch(ClassNotFoundException | SQLException | HeadlessException er)
         {
