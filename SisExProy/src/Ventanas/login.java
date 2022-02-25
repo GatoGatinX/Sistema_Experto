@@ -46,8 +46,8 @@ public class login extends javax.swing.JFrame {
         TxtUser = new javax.swing.JTextField();
         TxtPass = new javax.swing.JPasswordField();
         BtnOk = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnAtras = new javax.swing.JButton();
+        BtnRegistro = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,13 +57,13 @@ public class login extends javax.swing.JFrame {
 
         jPanel1.setOpaque(false);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("Usuario:");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("Contraseña:");
 
-        TxtUser.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TxtUser.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         TxtUser.setToolTipText("");
         TxtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,7 +71,7 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        TxtPass.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        TxtPass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         TxtPass.setText("jPasswordField1");
         TxtPass.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -84,7 +84,7 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        BtnOk.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        BtnOk.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         BtnOk.setText("Aceptar");
         BtnOk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnOk.addActionListener(new java.awt.event.ActionListener() {
@@ -93,18 +93,23 @@ public class login extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton1.setText("Atras");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnAtras.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BtnAtras.setText("Atras");
+        BtnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnAtrasActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jButton2.setText("Registrarse");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnRegistro.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BtnRegistro.setText("Registrarse");
+        BtnRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRegistroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,7 +119,7 @@ public class login extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(jButton1))
+                        .addComponent(BtnAtras))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(20, 20, 20)
@@ -125,11 +130,11 @@ public class login extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TxtUser)
-                            .addComponent(TxtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE))
+                            .addComponent(TxtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
                         .addGap(6, 6, 6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(BtnRegistro)
                         .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(124, 124, 124)
@@ -151,8 +156,8 @@ public class login extends javax.swing.JFrame {
                 .addComponent(BtnOk)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(BtnAtras)
+                    .addComponent(BtnRegistro))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -233,11 +238,11 @@ public class login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnOkActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasActionPerformed
         // TODO add your handling code here:
         this.dispose();
         new Inicial().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnAtrasActionPerformed
 
     private void TxtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPassActionPerformed
         // TODO add your handling code here:
@@ -248,6 +253,12 @@ public class login extends javax.swing.JFrame {
         // TODO add your handling code here:
         TxtPass.setText("");
     }//GEN-LAST:event_TxtPassMouseClicked
+
+    private void BtnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistroActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new registro().setVisible(true);
+    }//GEN-LAST:event_BtnRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,12 +297,12 @@ public class login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAtras;
     private javax.swing.JButton BtnOk;
+    private javax.swing.JButton BtnRegistro;
     private javax.swing.JLabel Fondo;
     private javax.swing.JPasswordField TxtPass;
     private javax.swing.JTextField TxtUser;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
