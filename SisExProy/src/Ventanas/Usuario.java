@@ -30,6 +30,8 @@ public class Usuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Usuario");
+        setResizable(false);
 
         jLabel1.setText("Usuario");
 

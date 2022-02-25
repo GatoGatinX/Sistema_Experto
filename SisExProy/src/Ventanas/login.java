@@ -51,6 +51,8 @@ public class login extends javax.swing.JFrame {
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setOpaque(false);
@@ -76,9 +78,15 @@ public class login extends javax.swing.JFrame {
                 TxtPassMouseClicked(evt);
             }
         });
+        TxtPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtPassActionPerformed(evt);
+            }
+        });
 
         BtnOk.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         BtnOk.setText("Aceptar");
+        BtnOk.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnOkActionPerformed(evt);
@@ -87,6 +95,7 @@ public class login extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton1.setText("Atras");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -95,6 +104,7 @@ public class login extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jButton2.setText("Registrarse");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -189,34 +199,31 @@ public class login extends javax.swing.JFrame {
             
             resultado = Integer.parseInt(rs.getString("fk_tipo_usuario"));
             
-            if(resultado==1){
-                
-                Administrador principal = new Administrador();
-                principal.setVisible(true);
-                this.dispose();
-                
-                System.out.println("Si funciono...");
-                resultado=0;
-                con.close(); //Cerrando conexion
-                
+            switch (resultado) {
+                case 1:
+                    {
+                        Administrador principal = new Administrador();
+                        principal.setVisible(true);
+                        this.dispose();
+                        System.out.println("Si funciono...");
+                        resultado=0;
+                        con.close(); //Cerrando conexion
+                        break;
+                    }
+                case 2:
+                    {
+                        Usuario principal = new Usuario();
+                        principal.setVisible(true);
+                        this.dispose();
+                        System.out.println("Si funciono...");
+                        resultado=0;
+                        con.close(); //Cerrando conexion
+                        break;
+                    }
+                default:
+                    JOptionPane.showMessageDialog(null,"Error de acceso a la base de datos");
+                    break;
             }
-            
-            if(resultado==2){
-                
-                Usuario principal = new Usuario();
-                principal.setVisible(true);
-                this.dispose();
-                
-                System.out.println("Si funciono...");
-                resultado=0;
-                con.close(); //Cerrando conexion
-                
-            }
-
-            else{
-                JOptionPane.showMessageDialog(null,"Error de acceso a la base de datos");
-            }
-            
             
         }
         else{
@@ -231,6 +238,11 @@ public class login extends javax.swing.JFrame {
         this.dispose();
         new Inicial().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TxtPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPassActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TxtPassActionPerformed
 
     private void TxtPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtPassMouseClicked
         // TODO add your handling code here:
