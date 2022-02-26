@@ -35,7 +35,7 @@ public class Administrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BtnAtras = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,24 +47,24 @@ public class Administrador extends javax.swing.JFrame {
         jLabel1.setText("Administrador");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(157, 104, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setText("Atras");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnAtras.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BtnAtras.setText("Atras");
+        BtnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 154, -1, -1));
+        getContentPane().add(BtnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 154, -1, -1));
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 1, 410, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAtrasActionPerformed
         // TODO add your handling code here:
         this.dispose();
         new login().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BtnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,8 +109,8 @@ public class Administrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnAtras;
     private javax.swing.JLabel Fondo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
