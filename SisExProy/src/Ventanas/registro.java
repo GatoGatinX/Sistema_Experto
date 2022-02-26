@@ -1,7 +1,14 @@
 
 package Ventanas;
 
+import static conexion.conexion.getConection;
+import static conexion.conexion.ps;
+import static conexion.conexion.rs;
 import java.awt.Image;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -163,22 +170,95 @@ public class registro extends javax.swing.JFrame {
 
     private void BtonConfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtonConfActionPerformed
         // TODO add your handling code here:
-        char a[] = TxtPass1.getPassword();
-        char b[] = TxtPass2.getPassword();
-        if ("".equals(TxtUser.getText()))
+        String a= String.valueOf(TxtPass1.getPassword());
+        String b= String.valueOf(TxtPass2.getPassword());
+        boolean band = true;
+        if ("".equals(TxtUser.getText())){
             JOptionPane.showMessageDialog( null , " Error el suario no puede ser nulo " );
-        if (a.length!=b.length)
+            band=false;
+        }
+        if (a.equals(b)==false){
             JOptionPane.showMessageDialog( null , " Error las contraseñas no coinciden " );
-        else
-            for(int x=0;x>=a.length;x++){
-                if(a[x]!=b[x]){
-                    JOptionPane.showMessageDialog( null , " Error las contraseñas no coinciden " );
-                    break;
-                }
+            band =false;
+        }
+        if (Rad1.isSelected() != true && Rad2.isSelected() != true){
+            JOptionPane.showMessageDialog( null , " Error seleccione un tipo de usuario " );
+            band=false;
+        }
+        if(Rad1.isSelected()&& band){
+            try {
+
+                validar_usuario1();
+
+            } catch (SQLException ex) {
+
+                Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+
             }
-        if (Rad1.isSelected() != true && Rad2.isSelected() != true) JOptionPane.showMessageDialog( null , " Error seleccione un tipo de usuario " );
+        }
+        if(Rad2.isSelected()&& band){
+            try {
+
+                validar_usuario2();
+
+            } catch (SQLException ex) {
+                Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_BtonConfActionPerformed
 
+    public void validar_usuario1() throws SQLException{
+        Connection con = getConection(); //Abriendo la conexion
+        
+        try {
+            /// Registro Admin
+            
+            String user = String.valueOf(TxtUser.getText());
+            String pass =  String.valueOf(TxtPass1.getPassword());
+            //ps = con.prepareStatement("select * from login where nombre_usuario='Ivan' and contrasenia='nobodyloveme';");
+            ps = con.prepareStatement("insert into login (nombre_usuario,fk_tipo_usuario,contrasenia) values (?,?,?);");
+            System.out.println("Aquí si llega 1 " + ps);        
+            ps.setString(1, user);
+            ps.setInt(2, 1);
+            ps.setString(3, pass);
+            ps.execute();
+            System.out.println("Aquí si llega 2 "+ps.toString());
+            JOptionPane.showMessageDialog(null,"Usuario registrado correctamente");
+            con.close(); //Cerrando conexion
+        } catch (SQLException ex) {
+            Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error en registro");
+            TxtUser.setText("");
+            TxtPass1.setText("");
+        }
+    }
+    
+    
+    public void validar_usuario2() throws SQLException{
+            Connection con = getConection(); //Abriendo la conexion
+        
+        try {
+            /// Registro Admin
+            
+            String user = String.valueOf(TxtUser.getText());
+            String pass =  String.valueOf(TxtPass1.getPassword());
+            //ps = con.prepareStatement("select * from login where nombre_usuario='Ivan' and contrasenia='nobodyloveme';");
+            ps = con.prepareStatement("insert into login (nombre_usuario,fk_tipo_usuario,contrasenia) values (?,?,?);");
+            System.out.println("Aquí si llega 1 " + ps);        
+            ps.setString(1, user);
+            ps.setInt(2, 2);
+            ps.setString(3, pass);
+            ps.execute();
+            System.out.println("Aquí si llega 2 "+ps.toString());
+            JOptionPane.showMessageDialog(null,"Usuario registrado correctamente");
+            con.close(); //Cerrando conexion
+        } catch (SQLException ex) {
+            Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error en registro");
+            TxtUser.setText("");
+            TxtPass1.setText("");
+        }
+    }
     private void Rad2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rad2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Rad2ActionPerformed
